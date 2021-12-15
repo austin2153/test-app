@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ClustersService } from 'src/app/services/clusters.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  public cloudzones = {};
 
-  constructor() { }
+  constructor(private clustersService: ClustersService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.cloudzones = this.clustersService.getCloudzones();
   }
 
 }
+

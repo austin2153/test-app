@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { VmManagementComponent } from './components/vm-management/vm-management.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ServersService } from './services/servers.service';
+import { ClustersService } from './services/clusters.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,7 +29,7 @@ const appRoutes: Routes = [
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [ServersService, ClustersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
